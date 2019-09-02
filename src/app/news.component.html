@@ -1,0 +1,19 @@
+<div class="container">
+
+  <div class="col">
+    <div *ngFor="let article of selectedNews.articles" class="row content">
+      <article>
+        <h4>{{article.title}}</h4>
+        <div style="font-size:14px; margin:5px">news by: {{article.source.name}}</div>
+        <div>{{article.description}}</div>
+        <div>Read more at
+        <a [href]="article.url" target="_blank">{{article.source.name}}</a>
+        </div>
+      </article>
+      <aside>
+        <img class="img-fluid"  alt="Image" [src]="article.urlToImage">
+    </aside>
+    </div>
+  </div>
+
+</div>

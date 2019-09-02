@@ -1,0 +1,27 @@
+<nav class="navbar navbar-light" style="background-color: #c0392b;">
+  <span class="navbar-brand text-white">News API</span>
+</nav>
+
+<div class="container">
+  <nav class="navbar navbar-light" style="background-color: #d63031;">
+    <a 
+    *ngFor="let keyword of keywords"
+    [routerLink]="['/home', keyword]"
+    class="navbar-brand text-white"
+    routerLinkActive="active"
+    >{{keyword}}</a>
+    
+    <form class="form-inline my-2 my-lg-0">
+      <input  class="form-control mr-sm-2"
+              type="search"
+              name="customTopic"
+              [(ngModel)]="customTopic"
+              placeholder="Enter a topic">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+      (click)="customNews()">Search</button>
+    </form>
+
+  </nav>
+</div>
+
+<router-outlet></router-outlet>
